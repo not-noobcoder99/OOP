@@ -1,0 +1,4 @@
+heartRate,oxygenLevel,bloodPressure,temperature,dateTimeRecorded
+45,98,120/80,36.5,2025-04-26T10:30
+80,96,180/100,37.0,2025-04-27T14:45
+65,99,120/75,35.5,2025-04-28T08:15

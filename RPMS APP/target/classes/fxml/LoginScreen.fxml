@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rpms.controllers.LoginController">
+   <top>
+      <HBox alignment="CENTER" styleClass="dashboard-header">
+         <children>
+            <Label styleClass="dashboard-title" text="Remote Patient Monitoring System">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <Label styleClass="dashboard-title" text="💓" />
+               </graphic>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" maxWidth="400.0" spacing="20.0" styleClass="login-container">
+               <children>
+                  <Label text="Login to Your Account" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Select Your Role" />
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button fx:id="patientButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handlePatientRoleSelect" styleClass="role-button" text="Patient" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label text="🏥" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="doctorButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleDoctorRoleSelect" styleClass="role-button" text="Doctor" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label text="👨‍⚕️" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="adminButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleAdminRoleSelect" styleClass="role-button" text="Admin" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label text="👤" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Username" />
+                        <TextField fx:id="usernameField" promptText="Enter your username" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Password" />
+                        <PasswordField fx:id="passwordField" promptText="Enter your password" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="selectedRoleLabel" text="No role selected" textFill="#0d47a1" />
+                  <Label fx:id="errorLabel" textFill="RED" />
+                  <Button fx:id="loginButton" defaultButton="true" maxWidth="Infinity" onAction="#handleLogin" styleClass="button-primary" text="Login">
+                     <graphic>
+                        <Label text="🔑" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

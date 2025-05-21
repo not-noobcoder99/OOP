@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rpms.controllers.DoctorDashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="dashboard-header">
+         <children>
+            <Label fx:id="welcomeLabel" styleClass="dashboard-title" text="Welcome, Doctor">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="logoutButton" mnemonicParsing="false" styleClass="logout-button" text="Logout">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <TabPane fx:id="tabPane" side="LEFT" tabClosingPolicy="UNAVAILABLE" styleClass="vertical-tab-pane" BorderPane.alignment="CENTER">
+        <tabs>
+          <!-- Patients Tab -->
+          <Tab text="Patients">
+            <graphic>
+              <VBox alignment="CENTER">
+                <children>
+                  <Label styleClass="tab-icon" text="👥" />
+                  <Label text="Patients" />
+                </children>
+              </VBox>
+            </graphic>
+            <content>
+              <VBox spacing="15.0" styleClass="content-panel">
+                <children>
+                  <Label text="Your Patients" styleClass="section-header">
+                    <font>
+                      <Font name="System Bold" size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="patientsListView" VBox.vgrow="ALWAYS" />
+                  <HBox spacing="10.0" styleClass="dashboard-actions">
+                    <children>
+                      <Button fx:id="viewPatientButton" mnemonicParsing="false" styleClass="button-primary" text="View Selected Patient" />
+                    </children>
+                  </HBox>
+                </children>
+                <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                </padding>
+              </VBox>
+            </content>
+          </Tab>
+          
+          <!-- Appointments Tab -->
+          <Tab text="Appointments">
+            <graphic>
+              <VBox alignment="CENTER">
+                <children>
+                  <Label styleClass="tab-icon" text="📅" />
+                  <Label text="Appointments" />
+                </children>
+              </VBox>
+            </graphic>
+            <content>
+              <VBox spacing="15.0" styleClass="content-panel">
+                <children>
+                  <Label text="Pending Appointments" styleClass="section-header">
+                    <font>
+                      <Font name="System Bold" size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="pendingAppointmentsListView" VBox.vgrow="ALWAYS" />
+                  
+                  <Label text="Approved Appointments" styleClass="section-header">
+                    <font>
+                      <Font name="System Bold" size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="approvedAppointmentsListView" prefHeight="150.0" />
+                </children>
+                <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                </padding>
+              </VBox>
+            </content>
+          </Tab>
+          
+          <!-- Video Calls Tab -->
+          <Tab text="Video Calls">
+            <graphic>
+              <VBox alignment="CENTER">
+                <children>
+                  <Label styleClass="tab-icon" text="🎥" />
+                  <Label text="Video Calls" />
+                </children>
+              </VBox>
+            </graphic>
+            <content>
+              <VBox spacing="15.0" styleClass="content-panel">
+                <children>
+                  <Label text="Pending Video Calls" styleClass="section-header">
+                    <font>
+                      <Font name="System Bold" size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="pendingVideoCallsListView" VBox.vgrow="ALWAYS" />
+                  
+                  <Label text="Scheduled Video Calls" styleClass="section-header">
+                    <font>
+                      <Font name="System Bold" size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="scheduledVideoCallsListView" prefHeight="150.0" />
+                </children>
+                <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                </padding>
+              </VBox>
+            </content>
+          </Tab>
+          
+          <!-- Feedbacks Tab -->
+          <Tab text="Feedbacks">
+            <graphic>
+              <VBox alignment="CENTER">
+                <children>
+                  <Label styleClass="tab-icon" text="📝" />
+                  <Label text="Feedbacks" />
+                </children>
+              </VBox>
+            </graphic>
+            <content>
+              <VBox spacing="15.0" styleClass="content-panel">
+                <children>
+                  <Label text="Provide Patient Feedback" styleClass="section-header">
+                    <font>
+                      <Font name="System Bold" size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="feedbacksPatientsListView" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="provideFeedbackButton" mnemonicParsing="false" styleClass="button-primary" text="Provide Feedback to Selected Patient" />
+                </children>
+                <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                </padding>
+              </VBox>
+            </content>
+          </Tab>
+          
+          <!-- Messages Tab -->
+          <Tab text="Messages">
+            <graphic>
+              <VBox alignment="CENTER">
+                <children>
+                  <Label styleClass="tab-icon" text="💬" />
+                  <Label text="Messages" />
+                </children>
+              </VBox>
+            </graphic>
+            <content>
+              <VBox fx:id="chatLayout" spacing="10.0" styleClass="content-panel">
+                <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                </padding>
+              </VBox>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </left>
+   <center>
+      <!-- This area will be managed by TabPane -->
+   </center>
+</BorderPane>

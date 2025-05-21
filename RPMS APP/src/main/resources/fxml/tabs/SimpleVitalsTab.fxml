@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="vitalsRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rpms.controllers.tabs.VitalsTabController">
+   <center>
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Label text="Simple Vitals Tab" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+            <Label text="This is a simplified version for debugging" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

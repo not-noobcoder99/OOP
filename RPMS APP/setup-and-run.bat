@@ -1,0 +1,13 @@
+@echo off
+echo Setting up and running Remote Patient Monitoring System...
+
+echo Creating target directory if it doesn't exist...
+if not exist "target\classes" mkdir target\classes
+
+echo Copying resources to target directory...
+if exist src\main\resources xcopy /E /Y src\main\resources\* target\classes\
+
+echo Compiling and running the application...
+mvn clean compile exec:java -Dexec.mainClass="com.rpms.Main"
+
+pause
